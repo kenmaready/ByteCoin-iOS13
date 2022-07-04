@@ -29,15 +29,16 @@ struct CoinManager {
                     print("error: \(error!)")
                     return
                 }
-                print("response: \(response)")
                 
                 if let safeData = data {
-                    print("data received: \(String(data: safeData, encoding: String.Encoding.utf8) as String?)")
+                    let coinData = CoinData.fromJson(safeData)
+                    print("coinData: \(coinData!)")
                 }
             }
             
             task.resume()
         }
     }
+    
 }
 
