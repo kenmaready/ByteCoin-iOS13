@@ -34,6 +34,10 @@ struct CoinData: Codable {
             return nil
         }
     }
+    
+    var rateString: String {
+        return String(format: "%.10f", rate)
+    }
 }
 
 extension DateFormatter {
